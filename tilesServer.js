@@ -38,7 +38,7 @@ app.post("/", async function (req, res) {
     currSession.diff = difficulty;
 
     // work with database here
-    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+    const client = new MongoClient(uri);
     try {
         await client.connect();
         // seeing if username already exists
@@ -50,10 +50,9 @@ app.post("/", async function (req, res) {
 			// do nothing probably
    		} else {
        		// it doesn't exist, make new json and insert
-            let newuser = {username: username, highscores: {easy: 0, normal: 0, hard: 0,}}
+            let newuser = {username: username, highscores: {easy: [0,0,0], normal: [0,0,0], hard: [0,0,0]}}
             const result = await client.db(databaseAndCollection.db).collection(databaseAndCollection.collection).insertOne(newuser);
    		}
-
     } catch (e) {
         console.error(e);
     } finally {
@@ -72,10 +71,14 @@ app.get("/tilegame", (req, res) => {
     // the blank pic could have its own ID, and I can document.querySelect just that ID?
     // document.getElementsByClassName, every piece is class tile
     // then when a tile is clicked, I check if adjacent is a blank tile, if yes move tile
+    // have each grid have its own set "randomized grid"
     //generateGrid();
     //starGame();
     res.render("This is the tilegame page");
 });
+
+
+
 
 /*
 function generateGrid() {
