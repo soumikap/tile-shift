@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Application</title>
+</head>
+
+<body>
+	<h1>Application</h1>
+	<form action="http://localhost:<%- portnum %>/apply" method="post">
+		<div style="border-style:groove;padding:.5%;">            
+			<label><strong>Name: <input type="text" name="name"/></strong></label>
+			<label><strong>Email Address: <input type="email" name="email"></strong></label><br><br>
+            <label><strong>GPA: <input type="text" name="gpa"></strong></label><br><br>
+            <label><strong>Background Information:</strong></label><br>
+            <textarea rows="5" cols="80" name="backInfo"></textarea>
+        </div>
+
+		<br>
+		<input type="reset"/>
+		<input type="submit" value="Submit Application" onclick="subButton()"/>
+	</form>
+    <hr>
+    <a href="/">HOME</a>
+</body>
+
+</html>
