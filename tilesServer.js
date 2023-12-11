@@ -28,16 +28,12 @@ app.get("/", (req, res) => {
     res.render("index");
 });
 
-var currSession = {username: "", diff: "easy", size: 3};
+var currSession = {username: "", diff: "easy", size: 3, score: 0};
 
 app.post("/", async function (request, res) { 
     const username = request.body.username;
     const gridsize = request.body.gridsize;
     const difficulty = request.body.level;
-
-    console.log(username);
-    console.log(gridsize);
-    console.log(difficulty);
     
     currSession.username = username;
     currSession.size = gridsize;
@@ -48,17 +44,18 @@ app.post("/", async function (request, res) {
     try {
         await client.connect();
         // seeing if username already exists
-        /*const findIt = await client.db(databaseAndCollection.db)
+        const findIt = await client.db(databaseAndCollection.db)
                 .collection(databaseAndCollection.collection)
-                .findOne(filter);
-        if (result) {
+                .findOne({username: username});
+        if (findIt) {
        		// it exists
 			// do nothing probably
-   		} else { */
+            console.log("user already exists");
+   		} else { 
        		// it doesn't exist, make new json and insert
             let newuser = {username: username, lastscore: 0, highscores: {easy: [0,0,0], normal: [0,0,0], hard: [0,0,0]}}
             const result = await client.db(databaseAndCollection.db).collection(databaseAndCollection.collection).insertOne(newuser);
-   		//}
+   		}
     } catch (e) {
         console.error(e);
     } finally {
@@ -84,12 +81,31 @@ app.get("/tilegame", (req, res) => {
     res.render("tile-game");
 });
 
-app.post("/tilegame", (req, res) => {
+app.post("/tilegame", async function(req, res) {
     //take score and update lastscore in mongo
+    const score = req.body.moves;
+    console.log("moves: "+score);
+    currSession.score = score;
+
+    const client = new MongoClient(uri);
+    try {
+        await client.connect();
+        // seeing if username already exists
+        const findIt = await client.db(databaseAndCollection.db)
+                .collection(databaseAndCollection.collection)
+                .findOne({username: currSession.username});
+    } catch (e) {
+        console.error(e);
+    } finally {
+        await client.close();
+    }
+
+
     res.redirect("highscore");
 });
 
 app.get("/highscore", async function (req, res) {
     //retrieve user's lastscore from mongo and display along with highscore
     let variables = {};
+    res.render("high-score");
 });

@@ -1,13 +1,13 @@
 const easy3x3 = `
-<div class="tile" id="x1"><img src="" alt="tile"></div>
-<div class="tile" id="x2"><img src="" alt="tile"></div>
-<div class="tile" id="x3"><img src="" alt="tile"></div>
-<div class="tile" id="x4"><img src="" alt="tile"></div>
-<div class="tile" id="x5"><img src="" alt="tile"></div>
-<div class="tile" id="x6"><img src="" alt="tile"></div>
-<div class="tile" id="x7"><img src="" alt="tile"></div>
-<div class="tile" id="x8"><img src="" alt="tile"></div>
-<div class="tile" id="x9"><img src="" alt="tile"></div>`
+<div class="t3x3" id="x1"><img src="/images/easy3x3/easy3x3_part_004.jpg" alt="tile7"></div>
+<div class="t3x3" id="x2"><img src="/images/easy3x3/easy3x3_part_008.jpg" alt="tile6"></div>
+<div class="t3x3" id="x3"><img src="/images/easy3x3/easy3x3_part_006.jpg" alt="tile1"></div>
+<div class="t3x3" id="x4"><img src="/images/easy3x3/easy3x3_part_003.jpg" alt="tile2"></div>
+<div class="t3x3" id="x5"><img src="/images/easy3x3/easy3x3_part_005.jpg" alt="tile8"></div>
+<div class="t3x3" id="x6"><img src="/images/easy3x3/easy3x3_part_007.jpg" alt="tile4"></div>
+<div class="t3x3" id="x7"><img src="/images/easy3x3/easy3x3_part_002.jpg" alt="tile3"></div>
+<div class="t3x3" id="x8"><img src="/images/easy3x3/easy3x3_part_001.jpg" alt="tile5"></div>
+<div class="t3x3" id="x9"></div>`
 
 const medium3x3 = `
 <div class="tile" id="x1"><img src="" alt="tile"></div>
@@ -167,7 +167,31 @@ const hard5x5 = `
 <div class="tile" id="x25"><img src="" alt="tile"></div>`
 
 
-window.onload = startgame;
+window.onload = function () {
+    document.getElementById("game-container").innerHTML = "hello";
+    startgame();
+}
+
+function startgame() {
+    // let dim = document.querySelector("#gridsize").value;
+    // let diff = document.querySelector("#difficulty").value;
+    let griddiv = document.querySelector("#game-container");
+    
+    //gamegrid = new Grid(dim, diff, griddiv);
+    gamegrid = new Grid("3x3", "easy", griddiv);
+    // add event listener for each div inside griddiv
+    for (let i = 1; i <= gamegrid.dim * gamegrid.dim; i++) {
+        document.getElementById("x"+i).addEventListener('click', function() {
+            const thistile = Number(this.id.substring(1));
+            //alert(typeof(thistile));
+            let empty = gamegrid.getadjemptytile(thistile);
+            //alert("empty: "+empty);
+            if (empty !== 0) {
+                gamegrid.movetile(thistile, empty);
+            }
+        });
+    }
+}
 
 var gamegrid;
 
@@ -178,60 +202,51 @@ class Grid {
     #board;
     #imgheader = "/images/";
     #emptytile;
+    moves;
 
     constructor(dim, diff, griddiv) {
+
         if (dim === "3x3") {
             this.#dim = 3;
-            if (diff === "Easy") {
+            if (diff === "easy") {
                 this.#board = easy3x3;
-                this.#imgheader+="easy3x3_part_0";
+                this.#imgheader+="/easy3x3/easy3x3_part_0";
             } else if (diff === "Medium") {
                 this.#board = medium3x3;
-                this.#imgheader+="medium3x3_part_0";
+                this.#imgheader+="/medium3x3/medium3x3_part_0";
             } else if (diff === "Hard") {
                 this.#board = hard3x3;
-                this.#imgheader+="hard3x3_part_0";
+                this.#imgheader+="/hard3x3/hard3x3_part_0";
             }
         } else if (dim === "4x4") {
             this.#dim = 4;
             if (diff === "Easy") {
                 this.#board = easy4x4;
-                this.#imgheader+="easy4x4_part_0";
+                this.#imgheader+="/easy4x4/easy4x4_part_0";
             } else if (diff === "Medium") {
                 this.#board = medium4x4;
-                this.#imgheader+="medium4x4_part_0";
+                this.#imgheader+="/medium4x4/medium4x4_part_0";
             } else if (diff === "Hard") {
                 this.#board = hard4x4;
-                this.#imgheader+="hard4x4_part_0";
+                this.#imgheader+="/hard4x4/hard4x4_part_0";
             }
         } else if (dim === "5x5") {
             this.#dim = 5;
             if (diff === "Easy") {
                 this.#board = easy5x5;
-                this.#imgheader+="easy5x5_part_0";
+                this.#imgheader+="/easy5x5/easy5x5_part_0";
             } else if (diff === "Medium") {
                 this.#board = medium5x5;
-                this.#imgheader+="medium5x5_part_0";
+                this.#imgheader+="/medium5x5/medium5x5_part_0";
             } else if (diff === "Hard") {
                 this.#board = hard5x5;
-                this.#imgheader+="hard5x5_part_0";
+                this.#imgheader+="/hard5x5/hard5x5_part_0";
             }
         }
-        this.#moves = 0;
+        this.moves = 0;
         this.#diff = diff;
         this.#emptytile = this.#dim * this.#dim;
         griddiv.innerHTML = this.#board;
-        // add event listener for each div inside griddiv
-        for (let i = 1; i <= this.#dim * this.#dim; i++) {
-            document.getElementById("x"+i).addEventListener('click', function() {
-                const thistile = Number(this.id.substring(1));
-                let empty = getadjemptytile(thistile);
-                if (empty !== 0) {
-                    movetile(thistile, empty);
-                }
-            });
-        }
-
     }
 
     get dim() {
@@ -246,23 +261,24 @@ class Grid {
         let dim = this.#dim;
         const maxidx = this.#dim * this.#dim;
         // 123 -> 1, 456 -> 4, 789 -> 7
-        const rowstart = ((id-1) / this.#dim) * this.#dim + 1;
+        const rowstart = Math.floor((id-1) / this.#dim) * this.#dim + 1;
         const rowend = rowstart + (this.#dim - 1);
+        //alert("below: "+document.getElementById("x"+(id+dim)).innerHTML.trim());
 
         // if has left and left is empty, return it
-        if (id-1 >= rowstart && document.getElementById(id-1).innerHTML.trim() == "") {
+        if (id-1 >= rowstart && document.getElementById("x"+(id-1)).innerHTML.trim() == "") {
             return id-1;
         }
         // if has right and right is empty, return it
-        else if (id+1 <= rowend && document.getElementById(id+1).innerHTML.trim() == "") {
+        else if (id+1 <= rowend && document.getElementById("x"+(id+1)).innerHTML.trim() == "") {
             return id+1;
         }
         // if has up and up is empty, return it
-        else if (id - dim > 0 && document.getElementById(id-dim).innerHTML.trim() == "") {
+        else if (id - dim > 0 && document.getElementById("x"+(id-dim)).innerHTML.trim() == "") {
             return id-3;
         }
         // if has down and down is empty, return it
-        else if (id + dim <= maxidx && document.getElementById(id+dim).innerHTML.trim() == "") {
+        else if (id + dim <= maxidx && document.getElementById("x"+(id+dim)).innerHTML.trim() == "") {
             return id+3;
         }
         else {
@@ -276,31 +292,33 @@ class Grid {
         const imgtomove = fromtile.innerHTML;
         fromtile.innerHTML = "";
         totile.innerHTML = imgtomove;
-        if (checkwin()) {
+        this.moves += 1;
+        //alert(this.moves);
+        document.getElementById("moves").innerHTML = `Moves: ${this.moves}`;
+        //alert("before checkwin");
+        if (gamegrid.checkwin()) {
             finishgame();
         }
     }
     
     checkwin() {
-        for (let i = 1; i <= this.#dim * this.#dim; i++) {
+        for (let i = 1; i <= this.#dim * this.#dim-1; i++) {
             let tileimg = document.getElementById("x"+i).innerHTML;
-            if (!tileimg.includes(i+".jpg")) {
+            let rightimg = tileimg.includes(i+".jpg");
+            if (!rightimg) {
+                //alert("wrong at: "+i+ " | "+tileimg);
                 return false;
             }
         }
+        //alert("you win!");
         return true;
     }
 }
 
-function startgame() {
-    let dim = document.querySelector("#gridsize").value;
-    let diff = document.querySelector("#difficulty").value;
-    let griddiv = document.querySelector("#griddiv");
-    gamegrid = new Grid(dim, diff, griddiv);
-}
+
 
 function finishgame() {
-    const lasttile = document.querySelector("x" + gamegrid.dim*gamegrid.dim);
+    const lasttile = document.querySelector("#x" + gamegrid.dim*gamegrid.dim);
     if (gamegrid.dim === 3) {
         lasttile.innerHTML = `<img src="${gamegrid.imgheader}09.jpg">`
     }else {
@@ -308,6 +326,8 @@ function finishgame() {
     }
     document.getElementById("finish").innerHTML = `
     <form action="/tilegame" method="post">
+        Total Moves:
+        <input type="text" value="${gamegrid.moves}" name="moves" disabled>
         <input type="submit" value="Finish Game"/>
     </form>
     `
