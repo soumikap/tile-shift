@@ -53,6 +53,9 @@ form input[type="submit"] {
     padding: 15px;
     border-radius: 15px;
     border: 1px solid #ECE2D0;
+    font-family: monospace;
+    color: #1A1423;
+    font-size: large;
 }
 
 form input[type="submit"] {
