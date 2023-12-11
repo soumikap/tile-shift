@@ -3,13 +3,13 @@ const http = require('http');
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
-const portNumber = 5000;
+const portNumber = 5005;
 const app = express();
 
 /* MongoDB stuff */
 require("dotenv").config({ path: path.resolve(__dirname, '.env') })  
 const uri = process.env.MONGO_CONNECTION_STRING;
-const databaseAndCollection = {db: "CMSC335_DB", collection:"campApplicants"};
+const databaseAndCollection = {db: "TileGame", collection:"highscores"};
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
 app.use(bodyParser.urlencoded({extended:false}));
@@ -30,10 +30,14 @@ app.get("/", (req, res) => {
 
 var currSession = {username: "", diff: "easy", size: 3};
 
-app.post("/", async function (req, res) {
+app.post("/", async function (request, res) { 
     const username = request.body.username;
-    const gridsize = request.body.username;
-    const difficulty = request.body.difficulty;
+    const gridsize = request.body.gridsize;
+    const difficulty = request.body.level;
+
+    console.log(username);
+    console.log(gridsize);
+    console.log(difficulty);
     
     currSession.username = username;
     currSession.size = gridsize;
@@ -44,17 +48,17 @@ app.post("/", async function (req, res) {
     try {
         await client.connect();
         // seeing if username already exists
-        const findIt = await client.db(databaseAndCollection.db)
+        /*const findIt = await client.db(databaseAndCollection.db)
                 .collection(databaseAndCollection.collection)
                 .findOne(filter);
         if (result) {
        		// it exists
 			// do nothing probably
-   		} else {
+   		} else { */
        		// it doesn't exist, make new json and insert
             let newuser = {username: username, lastscore: 0, highscores: {easy: [0,0,0], normal: [0,0,0], hard: [0,0,0]}}
             const result = await client.db(databaseAndCollection.db).collection(databaseAndCollection.collection).insertOne(newuser);
-   		}
+   		//}
     } catch (e) {
         console.error(e);
     } finally {
@@ -76,8 +80,8 @@ app.get("/tilegame", (req, res) => {
     // have each grid have its own set "randomized grid"
     //generateGrid();
     //starGame();
-    let variables = {username: currSession.username, gridsize: currSession.size, difficulty: currSession.diff};
-    res.render("This is the tilegame page", variables);
+    // let variables = {username: currSession.username, gridsize: currSession.size, difficulty: currSession.diff};
+    res.render("tile-game");
 });
 
 app.post("/tilegame", (req, res) => {
