@@ -3,7 +3,7 @@ const http = require('http');
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
-const portNumber = 5000;
+const portNumber = 5005;
 const app = express();
 
 /* MongoDB stuff */
@@ -16,6 +16,8 @@ app.use(bodyParser.urlencoded({extended:false}));
 
 app.set("views", path.resolve(__dirname, "templates"));
 app.set("view engine", "ejs");
+app.use('/images', express.static(__dirname + '/images'));
+app.use(express.static(__dirname + '/templates'));
 
 console.log(`Web server is running at http://localhost:${portNumber}`);
 process.stdin.setEncoding("utf8");

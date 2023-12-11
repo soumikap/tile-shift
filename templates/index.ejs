@@ -2,29 +2,46 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8" />
+	<meta charset="utf-8"/>
 	<title>Tiles Shift</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="/style.css" type="text/css">
+    <script src="tilegame.js"></script>
+    <!-- <link rel="icon" type="image/png" href="/images/favicon.png">  cannot get favicon to work -->
 </head>
 
 <body>
-	<!-- make form with background color different -->
-    <!-- background color #1A1423, background of div #352D40, text colors #BFB1D2 #ECE2D0 -->
-    <!-- I MADE A COMMENT -->
+    <!-- background color #1A1423, background of div #352D40, accent color #8E76B0, text colors #BFB1D2 #ECE2D0 -->
 
-    <h2>Applicant</h2>
-    <ul>
-        <li>To apply select <a href="/apply">Application</a></li>
-        <li>To review/update an application select <a href="/reviewApplication">Review Application</a></li>
-    </ul>
-    <br><hr>
-
-    <h2>Admin</h2>
-	<ul>
-        <li>To select users based on GPA <a href="/adminGFA">Select by GPA</a></li>
-        <li>To remove all applications <a href="/adminRemove">Remove All Applications</a></li>
-    </ul>
-    <br><hr>
+    <div id="logo-container">
+        <img src="/images/logo.png" alt="logo">
+    </div>
+    
+    <div id="form-container">
+        <form action="/" method="post">
+            <label>username</label><br>
+            <input type="text" name="username"/>
+            <br><br>
+            <label>grid size</label>
+            <br>
+            <input type="radio" name="gridsize" id="3by3">
+            <label class="labelText">3x3</label>
+            <input type="radio" name="gridsize" id="4by4">
+            <label class="labelText">4x4</label>
+            <input type="radio" name="gridsize" id="5by5">
+            <label class="labelText">5x5</label>
+            <br><br>
+            <label>picture</label>
+            <br>
+            <input type="radio" name="level" id="easy">
+            <label class="labelText">easy</label>
+            <input type="radio" name="level" id="normal">
+            <label class="labelText">normal</label>
+            <input type="radio" name="level" id="hard">
+            <label class="labelText">hard</label>
+            <br><br>
+            <input type="submit" value="start game" onclick="subButton()"/>
+        </form>
+    </div>
 </body>
 
 </html>
