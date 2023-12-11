@@ -16,6 +16,8 @@ app.use(bodyParser.urlencoded({extended:false}));
 
 app.set("views", path.resolve(__dirname, "templates"));
 app.set("view engine", "ejs");
+app.use('/images', express.static(__dirname + '/images'));
+app.use(express.static(__dirname + '/templates'));
 
 console.log(`Web server is running at http://localhost:${portNumber}`);
 process.stdin.setEncoding("utf8");
@@ -50,7 +52,7 @@ app.post("/", async function (req, res) {
 			// do nothing probably
    		} else {
        		// it doesn't exist, make new json and insert
-            let newuser = {username: username, highscores: {easy: [0,0,0], normal: [0,0,0], hard: [0,0,0]}}
+            let newuser = {username: username, lastscore: 0, highscores: {easy: [0,0,0], normal: [0,0,0], hard: [0,0,0]}}
             const result = await client.db(databaseAndCollection.db).collection(databaseAndCollection.collection).insertOne(newuser);
    		}
     } catch (e) {
@@ -74,14 +76,16 @@ app.get("/tilegame", (req, res) => {
     // have each grid have its own set "randomized grid"
     //generateGrid();
     //starGame();
-    res.render("This is the tilegame page");
+    let variables = {username: currSession.username, gridsize: currSession.size, difficulty: currSession.diff};
+    res.render("This is the tilegame page", variables);
 });
 
+app.post("/tilegame", (req, res) => {
+    //take score and update lastscore in mongo
+    res.redirect("highscore");
+});
 
-
-
-/*
-function generateGrid() {
-    // read reqgrid from the database?
-}
-*/
+app.get("/highscore", async function (req, res) {
+    //retrieve user's lastscore from mongo and display along with highscore
+    let variables = {};
+});
