@@ -83,17 +83,35 @@ app.get("/tilegame", (req, res) => {
 
 app.post("/tilegame", async function(req, res) {
     //take score and update lastscore in mongo
-    const score = req.body.moves;
-    console.log("moves: "+score);
-    currSession.score = score;
+    const moves = req.body.moves;
+    // console.log("moves: "+moves);
+    currSession.score = moves;
 
     const client = new MongoClient(uri);
     try {
         await client.connect();
-        // seeing if username already exists
+        // see if score is higher than highscore
         const findIt = await client.db(databaseAndCollection.db)
                 .collection(databaseAndCollection.collection)
                 .findOne({username: currSession.username});
+        const hs = findIt.highscores.easy[0];
+        console.log("hs: "+hs);
+        // moves is less than highscore, update highscore
+        if (hs === 0 || hs > moves) {
+            const filter = {username: currSession.username};
+            const update = {$set: {"highscores.easy.0": moves, lastscore: moves}};
+            const result = await client.db(databaseAndCollection.db)
+                .collection(databaseAndCollection.collection)
+                .updateOne(filter, update);
+        } else { // else just update lastscore
+            const filter = {username: currSession.username};
+            const update = {$set: {lastscore: moves}};
+            const result = await client.db(databaseAndCollection.db)
+                .collection(databaseAndCollection.collection)
+                .updateOne(filter, update);
+        }
+        
+
     } catch (e) {
         console.error(e);
     } finally {

@@ -327,7 +327,7 @@ function finishgame() {
     document.getElementById("finish").innerHTML = `
     <form action="/tilegame" method="post">
         Total Moves:
-        <input type="text" value="${gamegrid.moves}" name="moves" disabled>
+        <input type="hidden" value="${gamegrid.moves}" name="moves">
         <input type="submit" value="Finish Game"/>
     </form>
     `
