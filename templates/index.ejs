@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8"/>
-	<title>Tiles Shift</title>
+	<title>Tile Shift</title>
     <link rel="stylesheet" href="/style.css" type="text/css">
     <script src="tilegame.js"></script>
     <!-- <link rel="icon" type="image/png" href="/images/favicon.png">  cannot get favicon to work -->
@@ -13,7 +13,7 @@
     <!-- background color #1A1423, background of div #352D40, accent color #8E76B0, text colors #BFB1D2 #ECE2D0 -->
 
     <div id="logo-container">
-        <img src="/images/logo.png" alt="logo">
+        <a href="/"><img src="/images/logo.png" alt="logo"></a>
     </div>
     
     <div id="form-container">
@@ -23,21 +23,27 @@
             <br><br>
             <label>grid size</label>
             <br>
+            <label class="labelText">
             <input type="radio" name="gridsize" value="3by3">
-            <label class="labelText">3x3</label>
+            3x3</label>
+            <label class="labelText">
             <input type="radio" name="gridsize" value="4by4">
-            <label class="labelText">4x4</label>
+            4x4</label>
+            <label class="labelText">
             <input type="radio" name="gridsize" value="5by5">
-            <label class="labelText">5x5</label>
+            5x5</label>
             <br><br>
             <label>picture</label>
             <br>
+            <label class="labelText">
             <input type="radio" name="level" value="easy">
-            <label class="labelText">easy</label>
+            easy</label>
+            <label class="labelText">
             <input type="radio" name="level" value="normal">
-            <label class="labelText">normal</label>
+            normal</label>
+            <label class="labelText">
             <input type="radio" name="level" value="hard">
-            <label class="labelText">hard</label>
+            hard</label>
             <br><br>
             <input type="submit" value="start game"/>
         </form>

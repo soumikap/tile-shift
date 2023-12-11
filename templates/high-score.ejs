@@ -3,26 +3,25 @@
 
 <head>
 	<meta charset="utf-8" />
-	<title>Application</title>
+	<title>Tile Shift</title>
+	<link rel="stylesheet" href="/style.css" type="text/css">
+    <script src="tilegame.js"></script>
+    <!-- <link rel="icon" type="image/png" href="/images/favicon.png">  cannot get favicon to work -->
 </head>
 
 <body>
-	<h1>Application</h1>
-	<form action="/highscore" method="post">
-		<div style="border-style:groove;padding:.5%;">            
-			<label><strong>Name: <input type="text" name="name"/></strong></label>
-			<label><strong>Email Address: <input type="email" name="email"></strong></label><br><br>
-            <label><strong>GPA: <input type="text" name="gpa"></strong></label><br><br>
-            <label><strong>Background Information:</strong></label><br>
-            <textarea rows="5" cols="80" name="backInfo"></textarea>
-        </div>
+	<div id="logo-container">
+        <a href="/"><img src="/images/logo.png" alt="logo"></a>
+    </div>
 
-		<br>
-		<input type="reset"/>
-		<input type="submit" value="Submit Application"/>
-	</form>
-    <hr>
-    <a href="/">HOME</a>
+	<div id="score-container">
+		<label>new high score!</label><br><br> <!-- put this in an if else! -->
+		<label class="scorelabel">your score</label><br>
+		<label class="scorenum">57</label><br><br> <!-- use inner html to edit -->
+		<label class="scorelabel">your high score</label><br>
+		<label class="scorenum">57</label><br><br> <!-- use inner html to edit -->
+		<a href="/"><button type="button" id="newgame">new game</button></a>
+	</div>
 </body>
 
 </html>
