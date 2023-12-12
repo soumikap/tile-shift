@@ -31,6 +31,7 @@ const medium3x3 = `
 <div class="t3x3" id="x8"></div>
 <div class="t3x3" id="x9"><img src="/images/medium3x3/medium3x3_part_008.jpg" alt="tile8"></div>`
 */
+
 const hard3x3 = `
 <div class="t3x3" id="x1"><img src="/images/hard3x3/hard3x3_part_003.jpg" alt="tile3"></div>
 <div class="t3x3" id="x2"><img src="/images/hard3x3/hard3x3_part_001.jpg" alt="tile1"></div>
@@ -168,6 +169,33 @@ const hard4x4 = `
 */
 
 const easy5x5 = `
+<div class="t5x5" id="x1"><img src="/images/easy5x5/easy5x5_part_002.jpg" alt="tile2"></div>
+<div class="t5x5" id="x2"><img src="/images/easy5x5/easy5x5_part_013.jpg" alt="tile13"></div>
+<div class="t5x5" id="x3"><img src="/images/easy5x5/easy5x5_part_022.jpg" alt="tile22"></div>
+<div class="t5x5" id="x4"><img src="/images/easy5x5/easy5x5_part_010.jpg" alt="tile10"></div>
+<div class="t5x5" id="x5"><img src="/images/easy5x5/easy5x5_part_019.jpg" alt="tile19"></div>
+<div class="t5x5" id="x6"><img src="/images/easy5x5/easy5x5_part_015.jpg" alt="tile15"></div>
+<div class="t5x5" id="x7"><img src="/images/easy5x5/easy5x5_part_001.jpg" alt="tile1"></div>
+<div class="t5x5" id="x8"><img src="/images/easy5x5/easy5x5_part_003.jpg" alt="tile3"></div>
+<div class="t5x5" id="x9"><img src="/images/easy5x5/easy5x5_part_014.jpg" alt="tile14"></div>
+<div class="t5x5" id="x10"><img src="/images/easy5x5/easy5x5_part_007.jpg" alt="tile7"></div>
+<div class="t5x5" id="x11"><img src="/images/easy5x5/easy5x5_part_016.jpg" alt="tile16"></div>
+<div class="t5x5" id="x12"><img src="/images/easy5x5/easy5x5_part_005.jpg" alt="tile5"></div>
+<div class="t5x5" id="x13"><img src="/images/easy5x5/easy5x5_part_021.jpg" alt="tile21"></div>
+<div class="t5x5" id="x14"><img src="/images/easy5x5/easy5x5_part_009.jpg" alt="tile9"></div>
+<div class="t5x5" id="x15"><img src="/images/easy5x5/easy5x5_part_006.jpg" alt="tile6"></div>
+<div class="t5x5" id="x16"><img src="/images/easy5x5/easy5x5_part_012.jpg" alt="tile12"></div>
+<div class="t5x5" id="x17"><img src="/images/easy5x5/easy5x5_part_018.jpg" alt="tile18"></div>
+<div class="t5x5" id="x18"><img src="/images/easy5x5/easy5x5_part_020.jpg" alt="tile20"></div>
+<div class="t5x5" id="x19"><img src="/images/easy5x5/easy5x5_part_011.jpg" alt="tile11"></div>
+<div class="t5x5" id="x20"><img src="/images/easy5x5/easy5x5_part_023.jpg" alt="tile23"></div>
+<div class="t5x5" id="x21"><img src="/images/easy5x5/easy5x5_part_024.jpg" alt="tile24"></div>
+<div class="t5x5" id="x22"><img src="/images/easy5x5/easy5x5_part_004.jpg" alt="tile4"></div>
+<div class="t5x5" id="x23"><img src="/images/easy5x5/easy5x5_part_008.jpg" alt="tile8"></div>
+<div class="t5x5" id="x24"><img src="/images/easy5x5/easy5x5_part_017.jpg" alt="tile17"></div>
+<div class="t5x5" id="x25"><img src="" alt="tile"></div>`
+/*test data
+`
 <div class="t5x5" id="x1"><img src="/images/easy5x5/easy5x5_part_001.jpg" alt="tile1"></div>
 <div class="t5x5" id="x2"><img src="/images/easy5x5/easy5x5_part_002.jpg" alt="tile2"></div>
 <div class="t5x5" id="x3"><img src="/images/easy5x5/easy5x5_part_003.jpg" alt="tile3"></div>
@@ -192,61 +220,118 @@ const easy5x5 = `
 <div class="t5x5" id="x22"><img src="/images/easy5x5/easy5x5_part_022.jpg" alt="tile22"></div>
 <div class="t5x5" id="x23"><img src="/images/easy5x5/easy5x5_part_023.jpg" alt="tile23"></div>
 <div class="t5x5" id="x24"><img src="/images/easy5x5/easy5x5_part_024.jpg" alt="tile24"></div>
-<div class="t5x5" id="x25"><img src="/images/easy5x5/easy5x5_part_025.jpg" alt="tile25"></div>`
+<div class="t5x5" id="x25"><img src="/images/easy5x5/easy5x5_part_025.jpg" alt="tile25"></div>` */
 
 const medium5x5 = `
-<div class="t5x5" id="x1"><img src="" alt="tile"></div>
-<div class="t5x5" id="x2"><img src="" alt="tile"></div>
-<div class="t5x5" id="x3"><img src="" alt="tile"></div>
-<div class="t5x5" id="x4"><img src="" alt="tile"></div>
-<div class="t5x5" id="x5"><img src="" alt="tile"></div>
-<div class="t5x5" id="x6"><img src="" alt="tile"></div>
-<div class="t5x5" id="x7"><img src="" alt="tile"></div>
-<div class="t5x5" id="x8"><img src="" alt="tile"></div>
-<div class="t5x5" id="x9"><img src="" alt="tile"></div>
-<div class="t5x5" id="x10"><img src="" alt="tile"></div>
-<div class="t5x5" id="x11"><img src="" alt="tile"></div>
-<div class="t5x5" id="x12"><img src="" alt="tile"></div>
-<div class="t5x5" id="x13"><img src="" alt="tile"></div>
-<div class="t5x5" id="x14"><img src="" alt="tile"></div>
-<div class="t5x5" id="x15"><img src="" alt="tile"></div>
-<div class="t5x5" id="x16"><img src="" alt="tile"></div>
-<div class="t5x5" id="x17"><img src="" alt="tile"></div>
-<div class="t5x5" id="x18"><img src="" alt="tile"></div>
-<div class="t5x5" id="x19"><img src="" alt="tile"></div>
-<div class="t5x5" id="x20"><img src="" alt="tile"></div>
-<div class="t5x5" id="x21"><img src="" alt="tile"></div>
-<div class="t5x5" id="x22"><img src="" alt="tile"></div>
-<div class="t5x5" id="x23"><img src="" alt="tile"></div>
-<div class="t5x5" id="x24"><img src="" alt="tile"></div>
-<div class="t5x5" id="x25"><img src="" alt="tile"></div>`
+<div class="t5x5" id="x1"><img src="/images/medium5x5/medium5x5_part_011.jpg" alt="tile11"></div>
+<div class="t5x5" id="x2"><img src="/images/medium5x5/medium5x5_part_003.jpg" alt="tile3"></div>
+<div class="t5x5" id="x3"><img src="/images/medium5x5/medium5x5_part_016.jpg" alt="tile16"></div>
+<div class="t5x5" id="x4"><img src="/images/medium5x5/medium5x5_part_020.jpg" alt="tile20"></div>
+<div class="t5x5" id="x5"><img src="/images/medium5x5/medium5x5_part_012.jpg" alt="tile12"></div>
+<div class="t5x5" id="x6"><img src="/images/medium5x5/medium5x5_part_018.jpg" alt="tile18"></div>
+<div class="t5x5" id="x7"><img src="/images/medium5x5/medium5x5_part_006.jpg" alt="tile6"></div>
+<div class="t5x5" id="x8"><img src="/images/medium5x5/medium5x5_part_023.jpg" alt="tile23"></div>
+<div class="t5x5" id="x9"><img src="/images/medium5x5/medium5x5_part_021.jpg" alt="tile21"></div>
+<div class="t5x5" id="x10"><img src="/images/medium5x5/medium5x5_part_014.jpg" alt="tile14"></div>
+<div class="t5x5" id="x11"><img src="/images/medium5x5/medium5x5_part_015.jpg" alt="tile15"></div>
+<div class="t5x5" id="x12"><img src="/images/medium5x5/medium5x5_part_004.jpg" alt="tile4"></div>
+<div class="t5x5" id="x13"><img src="/images/medium5x5/medium5x5_part_010.jpg" alt="tile10"></div>
+<div class="t5x5" id="x14"><img src="/images/medium5x5/medium5x5_part_002.jpg" alt="tile2"></div>
+<div class="t5x5" id="x15"><img src="/images/medium5x5/medium5x5_part_008.jpg" alt="tile8"></div>
+<div class="t5x5" id="x16"><img src="/images/medium5x5/medium5x5_part_001.jpg" alt="tile1"></div>
+<div class="t5x5" id="x17"><img src="/images/medium5x5/medium5x5_part_005.jpg" alt="tile5"></div>
+<div class="t5x5" id="x18"><img src="/images/medium5x5/medium5x5_part_009.jpg" alt="tile9"></div>
+<div class="t5x5" id="x19"><img src="/images/medium5x5/medium5x5_part_017.jpg" alt="tile17"></div>
+<div class="t5x5" id="x20"><img src="/images/medium5x5/medium5x55_part_019.jpg" alt="tile19"></div>
+<div class="t5x5" id="x21"><img src="/images/medium5x5/medium5x5_part_007.jpg" alt="tile7"></div>
+<div class="t5x5" id="x22"><img src="/images/medium5x5/medium5x5_part_024.jpg" alt="tile24"></div>
+<div class="t5x5" id="x23"><img src="/images/medium5x5/medium5x5_part_013.jpg" alt="tile13"></div> 
+<div class="t5x5" id="x24"><img src="/images/medium5x5/medium5x5_part_022.jpg" alt="tile22"></div>
+<div class="t5x5" id="x25"></div>
+`
+/*test data
+`
+<div class="t5x5" id="x1"><img src="/images/medium5x5/medium5x5_part_001.jpg" alt="tile1"></div>
+<div class="t5x5" id="x2"><img src="/images/medium5x5/medium5x5_part_002.jpg" alt="tile2"></div>
+<div class="t5x5" id="x3"><img src="/images/medium5x5/medium5x5_part_003.jpg" alt="tile3"></div>
+<div class="t5x5" id="x4"><img src="/images/medium5x5/medium5x5_part_004.jpg" alt="tile4"></div>
+<div class="t5x5" id="x5"><img src="/images/medium5x5/medium5x5_part_005.jpg" alt="tile5"></div>
+<div class="t5x5" id="x6"><img src="/images/medium5x5/medium5x5_part_006.jpg" alt="tile6"></div>
+<div class="t5x5" id="x7"><img src="/images/medium5x5/medium5x5_part_007.jpg" alt="tile7"></div>
+<div class="t5x5" id="x8"><img src="/images/medium5x5/medium5x5_part_008.jpg" alt="tile8"></div>
+<div class="t5x5" id="x9"><img src="/images/medium5x5/medium5x5_part_009.jpg" alt="tile9"></div>
+<div class="t5x5" id="x10"><img src="/images/medium5x5/medium5x5_part_010.jpg" alt="tile10"></div>
+<div class="t5x5" id="x11"><img src="/images/medium5x5/medium5x5_part_011.jpg" alt="tile11"></div>
+<div class="t5x5" id="x12"><img src="/images/medium5x5/medium5x5_part_012.jpg" alt="tile12"></div>
+<div class="t5x5" id="x13"><img src="/images/medium5x5/medium5x5_part_013.jpg" alt="tile13"></div> 
+<div class="t5x5" id="x14"><img src="/images/medium5x5/medium5x5_part_014.jpg" alt="tile14"></div>
+<div class="t5x5" id="x15"><img src="/images/medium5x5/medium5x5_part_015.jpg" alt="tile15"></div>
+<div class="t5x5" id="x16"><img src="/images/medium5x5/medium5x5_part_016.jpg" alt="tile16"></div>
+<div class="t5x5" id="x17"><img src="/images/medium5x5/medium5x5_part_017.jpg" alt="tile17"></div>
+<div class="t5x5" id="x18"><img src="/images/medium5x5/medium5x5_part_018.jpg" alt="tile18"></div>
+<div class="t5x5" id="x19"><img src="/images/medium5x5/medium5x5_part_019.jpg" alt="tile19"></div>
+<div class="t5x5" id="x20"><img src="/images/medium5x5/medium5x5_part_020.jpg" alt="tile20"></div>
+<div class="t5x5" id="x21"><img src="/images/medium5x5/medium5x5_part_021.jpg" alt="tile21"></div>
+<div class="t5x5" id="x22"><img src="/images/medium5x5/medium5x5_part_022.jpg" alt="tile22"></div>
+<div class="t5x5" id="x23"><img src="/images/medium5x5/medium5x5_part_023.jpg" alt="tile23"></div>
+<div class="t5x5" id="x24"><img src="/images/medium5x5/medium5x5_part_024.jpg" alt="tile24"></div>
+<div class="t5x5" id="x25"><img src="/images/medium5x5/medium5x5_part_025.jpg" alt="tile25"></div>` */
 
 const hard5x5 = `
-<div class="t5x5" id="x1"><img src="" alt="tile"></div>
-<div class="t5x5" id="x2"><img src="" alt="tile"></div>
-<div class="t5x5" id="x3"><img src="" alt="tile"></div>
-<div class="t5x5" id="x4"><img src="" alt="tile"></div>
-<div class="t5x5" id="x5"><img src="" alt="tile"></div>
-<div class="t5x5" id="x6"><img src="" alt="tile"></div>
-<div class="t5x5" id="x7"><img src="" alt="tile"></div>
-<div class="t5x5" id="x8"><img src="" alt="tile"></div>
-<div class="t5x5" id="x9"><img src="" alt="tile"></div>
-<div class="t5x5" id="x10"><img src="" alt="tile"></div>
-<div class="t5x5" id="x11"><img src="" alt="tile"></div>
-<div class="t5x5" id="x12"><img src="" alt="tile"></div>
-<div class="t5x5" id="x13"><img src="" alt="tile"></div>
-<div class="t5x5" id="x14"><img src="" alt="tile"></div>
-<div class="t5x5" id="x15"><img src="" alt="tile"></div>
-<div class="t5x5" id="x16"><img src="" alt="tile"></div>
-<div class="t5x5" id="x17"><img src="" alt="tile"></div>
-<div class="t5x5" id="x18"><img src="" alt="tile"></div>
-<div class="t5x5" id="x19"><img src="" alt="tile"></div>
-<div class="t5x5" id="x20"><img src="" alt="tile"></div>
-<div class="t5x5" id="x21"><img src="" alt="tile"></div>
-<div class="t5x5" id="x22"><img src="" alt="tile"></div>
-<div class="t5x5" id="x23"><img src="" alt="tile"></div>
-<div class="t5x5" id="x24"><img src="" alt="tile"></div>
-<div class="t5x5" id="x25"><img src="" alt="tile"></div>`
+<div class="t5x5" id="x1"><img src="/images/hard5x5/hard5x5_part_002.jpg" alt="tile2"></div>
+<div class="t5x5" id="x2"><img src="/images/hard5x5/hard5x5_part_006.jpg" alt="tile6"></div>
+<div class="t5x5" id="x3"><img src="/images/hard5x5/hard5x5_part_014.jpg" alt="tile14"></div>
+<div class="t5x5" id="x4"><img src="/images/hard5x5/hard5x5_part_022.jpg" alt="tile22"></div>
+<div class="t5x5" id="x5"><img src="/images/hard5x5/hard5x5_part_013.jpg" alt="tile13"></div> 
+<div class="t5x5" id="x6"><img src="/images/hard5x5/hard5x5_part_016.jpg" alt="tile16"></div>
+<div class="t5x5" id="x7"><img src="/images/hard5x5/hard5x5_part_012.jpg" alt="tile12"></div>
+<div class="t5x5" id="x8"><img src="/images/hard5x5/hard5x5_part_005.jpg" alt="tile5"></div>
+<div class="t5x5" id="x9"><img src="/images/hard5x5/hard5x5_part_004.jpg" alt="tile4"></div>
+<div class="t5x5" id="x10"><img src="/images/hard5x5/hard5x5_part_011.jpg" alt="tile11"></div>
+<div class="t5x5" id="x11"><img src="/images/hard5x5/hard5x5_part_008.jpg" alt="tile8"></div>
+<div class="t5x5" id="x12"><img src="/images/hard5x5/hard5x5_part_024.jpg" alt="tile24"></div>
+<div class="t5x5" id="x13"><img src="/images/hard5x5/hard5x5_part_010.jpg" alt="tile10"></div>
+<div class="t5x5" id="x14"><img src="/images/hard5x5/hard5x5_part_001.jpg" alt="tile1"></div>
+<div class="t5x5" id="x15"><img src="/images/hard5x5/hard5x5_part_003.jpg" alt="tile3"></div>
+<div class="t5x5" id="x16"><img src="/images/hard5x5/hard5x5_part_020.jpg" alt="tile20"></div>
+<div class="t5x5" id="x17"><img src="/images/hard5x5/hard5x5_part_019.jpg" alt="tile19"></div>
+<div class="t5x5" id="x18"><img src="/images/hard5x5/hard5x5_part_007.jpg" alt="tile7"></div>
+<div class="t5x5" id="x19"><img src="/images/hard5x5/hard5x5_part_017.jpg" alt="tile17"></div>
+<div class="t5x5" id="x20"><img src="/images/hard5x5/hard5x5_part_015.jpg" alt="tile15"></div>
+<div class="t5x5" id="x21"><img src="/images/hard5x5/hard5x5_part_021.jpg" alt="tile21"></div>
+<div class="t5x5" id="x22"><img src="/images/hard5x5/hard5x5_part_018.jpg" alt="tile18"></div>
+<div class="t5x5" id="x23"><img src="/images/hard5x5/hard5x5_part_023.jpg" alt="tile23"></div>
+<div class="t5x5" id="x24"><img src="/images/hard5x5/hard5x5_part_009.jpg" alt="tile9"></div>
+<div class="t5x5" id="x25"></div>
+`
+
+/*test data
+`
+<div class="t5x5" id="x1"><img src="/images/hard5x5/hard5x5_part_001.jpg" alt="tile1"></div>
+<div class="t5x5" id="x2"><img src="/images/hard5x5/hard5x5_part_002.jpg" alt="tile2"></div>
+<div class="t5x5" id="x3"><img src="/images/hard5x5/hard5x5_part_003.jpg" alt="tile3"></div>
+<div class="t5x5" id="x4"><img src="/images/hard5x5/hard5x5_part_004.jpg" alt="tile4"></div>
+<div class="t5x5" id="x5"><img src="/images/hard5x5/hard5x5_part_005.jpg" alt="tile5"></div>
+<div class="t5x5" id="x6"><img src="/images/hard5x5/hard5x5_part_006.jpg" alt="tile6"></div>
+<div class="t5x5" id="x7"><img src="/images/hard5x5/hard5x5_part_007.jpg" alt="tile7"></div>
+<div class="t5x5" id="x8"><img src="/images/hard5x5/hard5x5_part_008.jpg" alt="tile8"></div>
+<div class="t5x5" id="x9"><img src="/images/hard5x5/hard5x5_part_009.jpg" alt="tile9"></div>
+<div class="t5x5" id="x10"><img src="/images/hard5x5/hard5x5_part_010.jpg" alt="tile10"></div>
+<div class="t5x5" id="x11"><img src="/images/hard5x5/hard5x5_part_011.jpg" alt="tile11"></div>
+<div class="t5x5" id="x12"><img src="/images/hard5x5/hard5x5_part_012.jpg" alt="tile12"></div>
+<div class="t5x5" id="x13"><img src="/images/hard5x5/hard5x5_part_013.jpg" alt="tile13"></div> 
+<div class="t5x5" id="x14"><img src="/images/hard5x5/hard5x5_part_014.jpg" alt="tile14"></div>
+<div class="t5x5" id="x15"><img src="/images/hard5x5/hard5x5_part_015.jpg" alt="tile15"></div>
+<div class="t5x5" id="x16"><img src="/images/hard5x5/hard5x5_part_016.jpg" alt="tile16"></div>
+<div class="t5x5" id="x17"><img src="/images/hard5x5/hard5x5_part_017.jpg" alt="tile17"></div>
+<div class="t5x5" id="x18"><img src="/images/hard5x5/hard5x5_part_018.jpg" alt="tile18"></div>
+<div class="t5x5" id="x19"><img src="/images/hard5x5/hard5x5_part_019.jpg" alt="tile19"></div>
+<div class="t5x5" id="x20"><img src="/images/hard5x5/hard5x5_part_020.jpg" alt="tile20"></div>
+<div class="t5x5" id="x21"><img src="/images/hard5x5/hard5x5_part_021.jpg" alt="tile21"></div>
+<div class="t5x5" id="x22"><img src="/images/hard5x5/hard5x5_part_022.jpg" alt="tile22"></div>
+<div class="t5x5" id="x23"><img src="/images/hard5x5/hard5x5_part_023.jpg" alt="tile23"></div>
+<div class="t5x5" id="x24"><img src="/images/hard5x5/hard5x5_part_024.jpg" alt="tile24"></div>
+<div class="t5x5" id="x25"><img src="/images/hard5x5/hard5x5_part_025.jpg" alt="tile25"></div>` */
 
 
 window.onload = function () {

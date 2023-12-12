@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
     res.render("index");
 });
 
-var currSession = {username: "", diff: "easy", size: 3, lastscore: 0, hs: 0};
+var currSession = {username: "", diff: "easy", size: 3, lastscore: 0, hs: 0, newhs: false};
 
 app.post("/", async function (request, res) { 
     const username = request.body.username;
@@ -127,21 +127,20 @@ app.post("/tilegame", async function(req, res) {
                 update = {$set: {"highscores.hard.2": moves}};
             }
         }
-        if (hs === 0) {
-            currSession.hs = moves;
-        } else {
-            currSession.hs = hs;
-        }
         
 
         // moves is less than highscore, update highscore
         if (hs === 0 || Number(hs) > moves) {
+            currSession.hs = moves;
+            currSession.newhs = true;
             const filter = {username: currSession.username};
             //const update = {$set: {"highscores.easy.0": moves, lastscore: moves}};
             const result = await client.db(databaseAndCollection.db)
                 .collection(databaseAndCollection.collection)
                 .updateOne(filter, update);
         } else { // else just update lastscore
+            currSession.hs = hs;
+            currSession.newhs = false;
             const filter = {username: currSession.username};
             const update = {$set: {lastscore: moves}};
             const result = await client.db(databaseAndCollection.db)
@@ -164,8 +163,13 @@ app.get("/highscore", async function (req, res) {
     //retrieve user's lastscore from mongo and display along with highscore
     const apiURL = `http://numbersapi.com/${currSession.score}`;
     axios.get(apiURL).then(response => {
-        console.log("data: "+response.data);
-        let variables = {yourscore: currSession.score, highscore: currSession.hs, funfact: response.data};
+        let variables;
+
+        if (currSession.newhs) {
+            variables = {yourscore: currSession.score, highscore: currSession.hs, funfact: response.data, highscoremsg: "new high score!"};
+        } else {
+            variables = {yourscore: currSession.score, highscore: currSession.hs, funfact: response.data, highscoremsg: ""};
+        }
         res.render("high-score", variables);
     }).catch(error => {
         console.error('Error getting funfact: ',error)
