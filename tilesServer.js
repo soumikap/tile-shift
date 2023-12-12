@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
     res.render("index");
 });
 
-var currSession = {username: "", diff: "easy", size: 3, score: 0};
+var currSession = {username: "", diff: "easy", size: 3, lastscore: 0, hs: 0};
 
 app.post("/", async function (request, res) { 
     const username = request.body.username;
@@ -95,9 +95,10 @@ app.post("/tilegame", async function(req, res) {
                 .collection(databaseAndCollection.collection)
                 .findOne({username: currSession.username});
         const hs = findIt.highscores.easy[0];
-        console.log("hs: "+hs);
+        currSession.hs = hs;
+
         // moves is less than highscore, update highscore
-        if (hs === 0 || hs > moves) {
+        if (hs === 0 || Number(hs) > moves) {
             const filter = {username: currSession.username};
             const update = {$set: {"highscores.easy.0": moves, lastscore: moves}};
             const result = await client.db(databaseAndCollection.db)
@@ -124,6 +125,6 @@ app.post("/tilegame", async function(req, res) {
 
 app.get("/highscore", async function (req, res) {
     //retrieve user's lastscore from mongo and display along with highscore
-    let variables = {};
-    res.render("high-score");
+    let variables = {yourscore: currSession.score, highscore: currSession.hs};
+    res.render("high-score", variables);
 });
