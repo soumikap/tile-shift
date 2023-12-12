@@ -1,4 +1,3 @@
-
 const http = require('http');
 const express = require("express");
 const path = require("path");
@@ -66,7 +65,6 @@ app.post("/", async function (request, res) {
 });
 
 app.get("/tilegame", (req, res) => {
-
     let variables = {size: currSession.size, level: currSession.diff};
     res.render("tile-game",variables);
 });
@@ -128,7 +126,6 @@ app.post("/tilegame", async function(req, res) {
             }
         }
         
-
         // moves is less than highscore, update highscore
         if (hs === 0 || Number(hs) > moves) {
             currSession.hs = moves;
@@ -148,13 +145,11 @@ app.post("/tilegame", async function(req, res) {
                 .updateOne(filter, update);
         }
         
-
     } catch (e) {
         console.error(e);
     } finally {
         await client.close();
     }
-
 
     res.redirect("highscore");
 });
@@ -166,13 +161,12 @@ app.get("/highscore", async function (req, res) {
         let variables;
 
         if (currSession.newhs) {
-            variables = {yourscore: currSession.score, highscore: currSession.hs, funfact: response.data, highscoremsg: "new high score!"};
+            variables = {yourscore: currSession.score, highscore: currSession.hs, funfact: response.data.toLowerCase(), highscoremsg: "new high score!"};
         } else {
-            variables = {yourscore: currSession.score, highscore: currSession.hs, funfact: response.data, highscoremsg: ""};
+            variables = {yourscore: currSession.score, highscore: currSession.hs, funfact: response.data.toLowerCase(), highscoremsg: ""};
         }
         res.render("high-score", variables);
     }).catch(error => {
         console.error('Error getting funfact: ',error)
     });
-    
 });

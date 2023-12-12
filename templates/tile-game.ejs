@@ -6,7 +6,7 @@
 	<title>Tile Shift</title>
     <link rel="stylesheet" href="/style.css" type="text/css">
     <script src="tilegame.js"></script>
-    <!-- <link rel="icon" type="image/png" href="/images/favicon.png">  cannot get favicon to work -->
+    <link rel="icon" type="image/png" href="/images/favicon.png">
 </head>
 
 <body>
@@ -14,9 +14,11 @@
         <a href="/"><img src="/images/logo.png" alt="logo"></a>
     </div>
 
-    <div id="size"><%- size %></div>
-    <div id="level"><%- level %></div>
-    <div id="moves">moves: 0</div>
+    <div id="topInfo">
+        <div id="moves">moves: 0</div>
+        <div id="size"><%- size %></div>
+        <div id="level"><%- level %></div>
+    </div>
     <div id="game-container"></div>
     <div id="finish"></div>
 </body>

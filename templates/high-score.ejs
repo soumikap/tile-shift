@@ -6,7 +6,7 @@
 	<title>Tile Shift</title>
 	<link rel="stylesheet" href="/style.css" type="text/css">
     <script src="tilegame.js"></script>
-    <!-- <link rel="icon" type="image/png" href="/images/favicon.png">  cannot get favicon to work -->
+    <link rel="icon" type="image/png" href="/images/favicon.png">
 </head>
 
 <body>
@@ -15,16 +15,14 @@
     </div>
 
 	<div id="score-container">
-		<label><%- highscoremsg %></label><br><br> <!-- put this in an if else! -->
+		<label><%- highscoremsg %></label><br><br>
 		<label class="scorelabel">your score</label><br>
-		<label class="scorenum"><%- yourscore %></label><br><br> <!-- use inner html to edit -->
+		<label class="scorenum"><%- yourscore %></label><br><br> 
 		<label class="scorelabel">your high score</label><br>
-		<label class="scorenum"><%- highscore %></label><br><br> <!-- use inner html to edit -->
+		<label class="scorenum"><%- highscore %></label><br><br>
 		<a href="/"><button type="button" id="newgame">new game</button></a><br><br>
-		<div id="funfact">Fun Fact: <br> <%- funfact %></div>
-	</div>
-
-	
+		<div id="funfact">fun fact: <br> <%- funfact %></div>
+	</div>	
 </body>
 
 </html>

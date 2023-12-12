@@ -70,28 +70,9 @@ form input[type="submit"] {
     font-family: monospace;
 }
 
-#moves {
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-#finalmovesbox {
-    width: 8%;
-    color: #1A1423;
-    background-color: #BFB1D2;
-    font-family: monospace;
-    font-size: 23px;
-    text-align: center;
-    border: 0px;
-}
-
-#finalmoves {
-    text-align: center;
-}
-
 #game-container {
-    width: 600px;
-    height: 600px;
+    height: 60vh;
+    width: 60vh;
     background-color: #352D40;
     background-size: cover;
     background-position: center;
@@ -105,15 +86,22 @@ form input[type="submit"] {
 }
 
 .t3x3 {
-    width: 200px;
-    height: 200px;
+    width: calc(100% / 3);
+    height: calc(100% / 3);
     
     display: flex;
 }
 
 .t4x4 {
-    width: 150px;
-    height: 150px;
+    width: 25%;
+    height: 25%;
+
+    display: flex;
+}
+
+.t5x5 {
+    width: 20%;
+    height: 20%;
 
     display: flex;
 }
@@ -147,4 +135,19 @@ form input[type="submit"] {
     font-family: monospace;
     margin: 10px 0;
     border-radius: 15px;
+}
+
+#topInfo {
+    width: 60vh;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+#moves, #size, #level {
+    flex: 1; /* Each div takes up equal space */
+    padding: 10px;
+    text-align: center; /* Align text in the center */
 }

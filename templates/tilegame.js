@@ -242,7 +242,7 @@ const medium5x5 = `
 <div class="t5x5" id="x17"><img src="/images/medium5x5/medium5x5_part_005.jpg" alt="tile5"></div>
 <div class="t5x5" id="x18"><img src="/images/medium5x5/medium5x5_part_009.jpg" alt="tile9"></div>
 <div class="t5x5" id="x19"><img src="/images/medium5x5/medium5x5_part_017.jpg" alt="tile17"></div>
-<div class="t5x5" id="x20"><img src="/images/medium5x5/medium5x55_part_019.jpg" alt="tile19"></div>
+<div class="t5x5" id="x20"><img src="/images/medium5x5/medium5x5_part_019.jpg" alt="tile19"></div>
 <div class="t5x5" id="x21"><img src="/images/medium5x5/medium5x5_part_007.jpg" alt="tile7"></div>
 <div class="t5x5" id="x22"><img src="/images/medium5x5/medium5x5_part_024.jpg" alt="tile24"></div>
 <div class="t5x5" id="x23"><img src="/images/medium5x5/medium5x5_part_013.jpg" alt="tile13"></div> 
@@ -372,7 +372,6 @@ class Grid {
     moves;
 
     constructor(dim, diff, griddiv) {
-
         if (dim === "3x3") {
             this.#dim = 3;
             if (diff === "easy") {
@@ -488,14 +487,14 @@ class Grid {
     }
 }
 
-
-
 function finishgame() {
     const lasttile = document.querySelector("#x" + gamegrid.dim*gamegrid.dim);
     if (gamegrid.dim === 3) {
         lasttile.innerHTML = `<img src="${gamegrid.imgheader}09.jpg">`
-    }else {
-        lasttile.innerHTML = `<img src="${gamegrid.imgheader}${gamegrid.dim*gamegrid.dim}.jpg">`
+    } else if (gamegrid.dim === 4) {
+        lasttile.innerHTML = `<img src="${gamegrid.imgheader}16.jpg">`
+    } else {
+        lasttile.innerHTML = `<img src="${gamegrid.imgheader}25.jpg">`
     }
     document.getElementById("finish").innerHTML = `
     <form action="/tilegame" method="post" id="finalmoves">
