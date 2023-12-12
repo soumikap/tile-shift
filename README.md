@@ -5,7 +5,7 @@ This puzzle game will split a photo into a grid and shuffle the pieces. You must
 https://tiles-game-hs3a.onrender.com  
 
 [Numbers API Source](http://numbersapi.com)  
-Tile Shift Demo  
+[Tile Shift Demo](https://youtu.be/Vzxx8qkBGnE)  
 Photo Credits: Soumika Pendem  
 
-This app was created by Soumika Pendem (UID#117881912) and Henna Poon (UID#).  
+This app was created by Soumika Pendem (UID#117881912) and Henna Poon (UID#117770810).  
