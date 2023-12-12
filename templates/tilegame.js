@@ -11,6 +11,17 @@ const easy3x3 = `
 
 const medium3x3 = `
 <div class="t3x3" id="x1"><img src="/images/medium3x3/medium3x3_part_001.jpg" alt="tile1"></div>
+<div class="t3x3" id="x2"><img src="/images/medium3x3/medium3x3_part_005.jpg" alt="tile5"></div>
+<div class="t3x3" id="x3"><img src="/images/medium3x3/medium3x3_part_008.jpg" alt="tile8"></div>
+<div class="t3x3" id="x4"><img src="/images/medium3x3/medium3x3_part_002.jpg" alt="tile2"></div>
+<div class="t3x3" id="x5"><img src="/images/medium3x3/medium3x3_part_003.jpg" alt="tile3"></div>
+<div class="t3x3" id="x6"><img src="/images/medium3x3/medium3x3_part_007.jpg" alt="tile7"></div>
+<div class="t3x3" id="x7"><img src="/images/medium3x3/medium3x3_part_004.jpg" alt="tile4"></div>
+<div class="t3x3" id="x8"><img src="/images/medium3x3/medium3x3_part_006.jpg" alt="tile6"></div>
+<div class="t3x3" id="x9"></div>`
+/* test data (one move away from win)
+`
+<div class="t3x3" id="x1"><img src="/images/medium3x3/medium3x3_part_001.jpg" alt="tile1"></div>
 <div class="t3x3" id="x2"><img src="/images/medium3x3/medium3x3_part_002.jpg" alt="tile2"></div>
 <div class="t3x3" id="x3"><img src="/images/medium3x3/medium3x3_part_003.jpg" alt="tile3"></div>
 <div class="t3x3" id="x4"><img src="/images/medium3x3/medium3x3_part_004.jpg" alt="tile4"></div>
@@ -19,8 +30,19 @@ const medium3x3 = `
 <div class="t3x3" id="x7"><img src="/images/medium3x3/medium3x3_part_007.jpg" alt="tile7"></div>
 <div class="t3x3" id="x8"></div>
 <div class="t3x3" id="x9"><img src="/images/medium3x3/medium3x3_part_008.jpg" alt="tile8"></div>`
-
+*/
 const hard3x3 = `
+<div class="t3x3" id="x1"><img src="/images/hard3x3/hard3x3_part_003.jpg" alt="tile3"></div>
+<div class="t3x3" id="x2"><img src="/images/hard3x3/hard3x3_part_001.jpg" alt="tile1"></div>
+<div class="t3x3" id="x3"><img src="/images/hard3x3/hard3x3_part_008.jpg" alt="tile8"></div>
+<div class="t3x3" id="x4"><img src="/images/hard3x3/hard3x3_part_007.jpg" alt="tile7"></div>
+<div class="t3x3" id="x5"><img src="/images/hard3x3/hard3x3_part_005.jpg" alt="tile5"></div>
+<div class="t3x3" id="x6"><img src="/images/hard3x3/hard3x3_part_006.jpg" alt="tile6"></div>
+<div class="t3x3" id="x7"><img src="/images/hard3x3/hard3x3_part_004.jpg" alt="tile4"></div>
+<div class="t3x3" id="x8"><img src="/images/hard3x3/hard3x3_part_002.jpg" alt="tile2"></div>
+<div class="t3x3" id="x9"></div>`
+/* test data
+`
 <div class="t3x3" id="x1"><img src="/images/hard3x3/hard3x3_part_001.jpg" alt="tile1"></div>
 <div class="t3x3" id="x2"><img src="/images/hard3x3/hard3x3_part_002.jpg" alt="tile2"></div>
 <div class="t3x3" id="x3"><img src="/images/hard3x3/hard3x3_part_003.jpg" alt="tile3"></div>
@@ -30,8 +52,27 @@ const hard3x3 = `
 <div class="t3x3" id="x7"><img src="/images/hard3x3/hard3x3_part_007.jpg" alt="tile7"></div>
 <div class="t3x3" id="x8"></div>
 <div class="t3x3" id="x9"><img src="/images/hard3x3/hard3x3_part_008.jpg" alt="tile9"></div>`
+*/
 
 const easy4x4 = `
+<div class="t4x4" id="x1"><img src="/images/easy4x4/easy4x4_part_009.jpg" alt="tile8"></div>
+<div class="t4x4" id="x2"><img src="/images/easy4x4/easy4x4_part_012.jpg" alt="tile12"></div>
+<div class="t4x4" id="x3"><img src="/images/easy4x4/easy4x4_part_005.jpg" alt="tile5"></div>
+<div class="t4x4" id="x4"><img src="/images/easy4x4/easy4x4_part_003.jpg" alt="tile3"></div>
+<div class="t4x4" id="x5"><img src="/images/easy4x4/easy4x4_part_007.jpg" alt="tile7"></div>
+<div class="t4x4" id="x6"><img src="/images/easy4x4/easy4x4_part_002.jpg" alt="tile2"></div>
+<div class="t4x4" id="x7"><img src="/images/easy4x4/easy4x4_part_010.jpg" alt="tile10"></div>
+<div class="t4x4" id="x8"><img src="/images/easy4x4/easy4x4_part_001.jpg" alt="tile1"></div>
+<div class="t4x4" id="x9"><img src="/images/easy4x4/easy4x4_part_015.jpg" alt="tile15"></div>
+<div class="t4x4" id="x10"><img src="/images/easy4x4/easy4x4_part_013.jpg" alt="tile13"></div>
+<div class="t4x4" id="x11"><img src="/images/easy4x4/easy4x4_part_006.jpg" alt="tile6"></div>
+<div class="t4x4" id="x12"><img src="/images/easy4x4/easy4x4_part_014.jpg" alt="tile14"></div>
+<div class="t4x4" id="x13"><img src="/images/easy4x4/easy4x4_part_004.jpg" alt="tile4"></div>
+<div class="t4x4" id="x14"><img src="/images/easy4x4/easy4x4_part_011.jpg" alt="tile11"></div>
+<div class="t4x4" id="x15"><img src="/images/easy4x4/easy4x4_part_008.jpg" alt="tile18"></div>
+<div class="t4x4" id="x16"></div>`
+/* test data
+`
 <div class="t4x4" id="x1"><img src="/images/easy4x4/easy4x4_part_001.jpg" alt="tile1"></div>
 <div class="t4x4" id="x2"><img src="/images/easy4x4/easy4x4_part_002.jpg" alt="tile2"></div>
 <div class="t4x4" id="x3"><img src="/images/easy4x4/easy4x4_part_003.jpg" alt="tile3"></div>
@@ -48,8 +89,28 @@ const easy4x4 = `
 <div class="t4x4" id="x14"><img src="/images/easy4x4/easy4x4_part_014.jpg" alt="tile14"></div>
 <div class="t4x4" id="x15"></div>
 <div class="t4x4" id="x16"><img src="/images/easy4x4/easy4x4_part_015.jpg" alt="tile16"></div>`
+*/
 
 const medium4x4 = `
+<div class="t4x4" id="x1"><img src="/images/medium4x4/medium4x4_part_007.jpg" alt="tile7"></div>
+<div class="t4x4" id="x2"><img src="/images/medium4x4/medium4x4_part_011.jpg" alt="tile11"></div>
+<div class="t4x4" id="x3"><img src="/images/medium4x4/medium4x4_part_012.jpg" alt="tile12"></div>
+<div class="t4x4" id="x4"><img src="/images/medium4x4/medium4x4_part_008.jpg" alt="tile8"></div>
+<div class="t4x4" id="x5"><img src="/images/medium4x4/medium4x4_part_004.jpg" alt="tile4"></div>
+<div class="t4x4" id="x6"><img src="/images/medium4x4/medium4x4_part_009.jpg" alt="tile9"></div>
+<div class="t4x4" id="x7"><img src="/images/medium4x4/medium4x4_part_006.jpg" alt="tile6"></div>
+<div class="t4x4" id="x8"><img src="/images/medium4x4/medium4x4_part_015.jpg" alt="tile15"></div>
+<div class="t4x4" id="x9"><img src="/images/medium4x4/medium4x4_part_003.jpg" alt="tile3"></div>
+<div class="t4x4" id="x10"><img src="/images/medium4x4/medium4x4_part_002.jpg" alt="tile2"></div>
+<div class="t4x4" id="x11"><img src="/images/medium4x4/medium4x4_part_001.jpg" alt="tile1"></div>
+<div class="t4x4" id="x12"><img src="/images/medium4x4/medium4x4_part_014.jpg" alt="tile14"></div>
+<div class="t4x4" id="x13"><img src="/images/medium4x4/medium4x4_part_010.jpg" alt="tile10"></div>
+<div class="t4x4" id="x14"><img src="/images/medium4x4/medium4x4_part_005.jpg" alt="tile5"></div>
+<div class="t4x4" id="x15"><img src="/images/medium4x4/medium4x4_part_013.jpg" alt="tile13"></div>
+<div class="t4x4" id="x16"></div>`
+
+/* test data
+`
 <div class="t4x4" id="x1"><img src="/images/medium4x4/medium4x4_part_001.jpg" alt="tile1"></div>
 <div class="t4x4" id="x2"><img src="/images/medium4x4/medium4x4_part_002.jpg" alt="tile2"></div>
 <div class="t4x4" id="x3"><img src="/images/medium4x4/medium4x4_part_003.jpg" alt="tile3"></div>
@@ -66,8 +127,28 @@ const medium4x4 = `
 <div class="t4x4" id="x14"><img src="/images/medium4x4/medium4x4_part_014.jpg" alt="tile14"></div>
 <div class="t4x4" id="x15"></div>
 <div class="t4x4" id="x16"><img src="/images/medium4x4/medium4x4_part_015.jpg" alt="tile16"></div>`
+ */
 
 const hard4x4 = `
+<div class="t4x4" id="x1"><img src="/images/hard4x4/hard4x4_part_015.jpg" alt="tile15"></div>
+<div class="t4x4" id="x2"><img src="/images/hard4x4/hard4x4_part_010.jpg" alt="tile10"></div>
+<div class="t4x4" id="x3"><img src="/images/hard4x4/hard4x4_part_008.jpg" alt="tile8"></div>
+<div class="t4x4" id="x4"><img src="/images/hard4x4/hard4x4_part_006.jpg" alt="tile6"></div>
+<div class="t4x4" id="x5"><img src="/images/hard4x4/hard4x4_part_002.jpg" alt="tile2"></div>
+<div class="t4x4" id="x6"><img src="/images/hard4x4/hard4x4_part_013.jpg" alt="tile13"></div>
+<div class="t4x4" id="x7"><img src="/images/hard4x4/hard4x4_part_009.jpg" alt="tile9"></div>
+<div class="t4x4" id="x8"><img src="/images/hard4x4/hard4x4_part_012.jpg" alt="tile12"></div>
+<div class="t4x4" id="x9"><img src="/images/hard4x4/hard4x4_part_014.jpg" alt="tile14"></div>
+<div class="t4x4" id="x10"><img src="/images/hard4x4/hard4x4_part_003.jpg" alt="tile3"></div>
+<div class="t4x4" id="x11"><img src="/images/hard4x4/hard4x4_part_011.jpg" alt="tile11"></div>
+<div class="t4x4" id="x12"><img src="/images/hard4x4/hard4x4_part_007.jpg" alt="tile7"></div>
+<div class="t4x4" id="x13"><img src="/images/hard4x4/hard4x4_part_001.jpg" alt="tile1"></div>
+<div class="t4x4" id="x14"><img src="/images/hard4x4/hard4x4_part_005.jpg" alt="tile5"></div>
+<div class="t4x4" id="x15"><img src="/images/hard4x4/hard4x4_part_004.jpg" alt="tile4"></div>
+<div class="t4x4" id="x16"></div>`
+
+/* test data
+`
 <div class="t4x4" id="x1"><img src="/images/hard4x4/hard4x4_part_001.jpg" alt="tile1"></div>
 <div class="t4x4" id="x2"><img src="/images/hard4x4/hard4x4_part_002.jpg" alt="tile2"></div>
 <div class="t4x4" id="x3"><img src="/images/hard4x4/hard4x4_part_003.jpg" alt="tile3"></div>
@@ -84,6 +165,7 @@ const hard4x4 = `
 <div class="t4x4" id="x14"><img src="/images/hard4x4/hard4x4_part_014.jpg" alt="tile14"></div>
 <div class="t4x4" id="x15"></div>
 <div class="t4x4" id="x16"><img src="/images/hard4x4/hard4x4_part_015.jpg" alt="tile16"></div>`
+*/
 
 const easy5x5 = `
 <div class="t5x5" id="x1"><img src="/images/easy5x5/easy5x5_part_001.jpg" alt="tile1"></div>

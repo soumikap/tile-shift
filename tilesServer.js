@@ -5,6 +5,7 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const portNumber = 5005;
 const app = express();
+const axios = require('axios');
 
 /* MongoDB stuff */
 require("dotenv").config({ path: path.resolve(__dirname, '.env') })  
@@ -126,12 +127,23 @@ app.post("/tilegame", async function(req, res) {
                 update = {$set: {"highscores.hard.2": moves}};
             }
         }
-        currSession.hs = hs;
+        if (hs === 0) {
+            currSession.hs = moves;
+        } else {
+            currSession.hs = hs;
+        }
+        
 
         // moves is less than highscore, update highscore
         if (hs === 0 || Number(hs) > moves) {
             const filter = {username: currSession.username};
             //const update = {$set: {"highscores.easy.0": moves, lastscore: moves}};
+            const result = await client.db(databaseAndCollection.db)
+                .collection(databaseAndCollection.collection)
+                .updateOne(filter, update);
+        } else { // else just update lastscore
+            const filter = {username: currSession.username};
+            const update = {$set: {lastscore: moves}};
             const result = await client.db(databaseAndCollection.db)
                 .collection(databaseAndCollection.collection)
                 .updateOne(filter, update);
@@ -150,6 +162,13 @@ app.post("/tilegame", async function(req, res) {
 
 app.get("/highscore", async function (req, res) {
     //retrieve user's lastscore from mongo and display along with highscore
-    let variables = {yourscore: currSession.score, highscore: currSession.hs};
-    res.render("high-score", variables);
+    const apiURL = `http://numbersapi.com/${currSession.score}`;
+    axios.get(apiURL).then(response => {
+        console.log("data: "+response.data);
+        let variables = {yourscore: currSession.score, highscore: currSession.hs, funfact: response.data};
+        res.render("high-score", variables);
+    }).catch(error => {
+        console.error('Error getting funfact: ',error)
+    });
+    
 });
