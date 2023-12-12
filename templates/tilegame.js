@@ -193,7 +193,7 @@ const easy5x5 = `
 <div class="t5x5" id="x22"><img src="/images/easy5x5/easy5x5_part_004.jpg" alt="tile4"></div>
 <div class="t5x5" id="x23"><img src="/images/easy5x5/easy5x5_part_008.jpg" alt="tile8"></div>
 <div class="t5x5" id="x24"><img src="/images/easy5x5/easy5x5_part_017.jpg" alt="tile17"></div>
-<div class="t5x5" id="x25"><img src="" alt="tile"></div>`
+<div class="t5x5" id="x25"></div>`
 /*test data
 `
 <div class="t5x5" id="x1"><img src="/images/easy5x5/easy5x5_part_001.jpg" alt="tile1"></div>
